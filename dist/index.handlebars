@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Team</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>My Team</h1>
+  </header>
+  <main>
+    {{#each teamMembers}}
+      <div class="card">
+        <h2>{{name}}</h2>
+        <p>{{role}}</p>
+        <ul>
+          <li>ID: {{id}}</li>
+          <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
+          {{#if github}}
+            <li>GitHub: <a href="https://github.com/{{github}}">{{github}}</a></li>
+          {{/if}}
+          {{#if school}}
+            <li>School: {{school}}</li>
+          {{/if}}
+        </ul>
+      </div>
+    {{/each}}
+  </main>
+</body>
+</html>
